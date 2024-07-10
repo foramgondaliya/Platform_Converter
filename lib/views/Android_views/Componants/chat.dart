@@ -12,7 +12,9 @@ class Chats extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Chats"),
+        title: const Text(
+          "Chats",
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -27,7 +29,7 @@ class Chats extends StatelessWidget {
           stepperProvider.nameController.clear();
           stepperProvider.contactController.clear();
           stepperProvider.step = 0;
-          // Provider.of<imageProvider>(context, listen: false).clearImagePath();
+          //Provider.of<imageProvider>(context, listen: false).clearImagePath();
         },
         child: const Icon(Icons.add),
       ),
@@ -38,7 +40,7 @@ class Chats extends StatelessWidget {
             itemBuilder: (context, index) {
               final contact = contactProvider.allContact[index];
               return Padding(
-                padding: const EdgeInsets.only(left: 12, right: 12, top: 10),
+                padding: const EdgeInsets.only(left: 12, right: 12, top: 5),
                 child: Card(
                   elevation: 3,
                   child: ListTile(
@@ -58,7 +60,7 @@ class Chats extends StatelessWidget {
                               child: contact.imagePath == null
                                   ? Text(
                                       contact.name[0].toUpperCase(),
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontSize: 24,
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -96,13 +98,17 @@ class Chats extends StatelessWidget {
                               ),
                               PopupMenuItem(
                                 onTap: () {
-                                  Future.microtask(() {
-                                    Provider.of<ContactProvider>(context,
-                                            listen: false)
-                                        .deleteContacts(contact);
-                                  });
+                                  Future.microtask(
+                                    () {
+                                      Provider.of<ContactProvider>(context,
+                                              listen: false)
+                                          .deleteContacts(contact);
+                                    },
+                                  );
                                 },
-                                child: const Text("Delete"),
+                                child: const Text(
+                                  "Delete",
+                                ),
                               ),
                             ];
                           },
@@ -218,20 +224,20 @@ class AlertBox extends StatelessWidget {
                                 : null,
                           ),
                           const SizedBox(height: 20),
-                          ElevatedButton(
-                            onPressed: () {
-                              if (stepProvider.imagePath != null) {
-                                stepProvider.forwardStep(context);
-                              } else {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                      content: Text(
-                                          "Please select a profile photo")),
-                                );
-                              }
-                            },
-                            child: const Text("Continue"),
-                          ),
+                          // ElevatedButton(
+                          //   onPressed: () {
+                          //     if (stepProvider.imagePath != null) {
+                          //       stepProvider.forwardStep(context);
+                          //     } else {
+                          //       ScaffoldMessenger.of(context).showSnackBar(
+                          //         const SnackBar(
+                          //             content: Text(
+                          //                 "Please select a profile photo")),
+                          //       );
+                          //     }
+                          //   },
+                          //   child: const Text("Continue"),
+                          // ),
                         ],
                       );
                     },
@@ -248,11 +254,11 @@ class AlertBox extends StatelessWidget {
                   ),
                 ),
                 Step(
-                  title: const Text("Description"),
+                  title: const Text("Contact No."),
                   content: TextField(
                     controller: stepProvider.contactController,
                     decoration: const InputDecoration(
-                      labelText: "Description",
+                      labelText: "Contact",
                       border: OutlineInputBorder(),
                     ),
                   ),

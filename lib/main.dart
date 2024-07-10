@@ -32,33 +32,34 @@ class _myAppState extends State<myApp> {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (context) => PlatformProvider()),
-          ChangeNotifierProvider(create: (context) => BottomProvider()),
-          ChangeNotifierProvider(create: (context) => ChatDataProvider()),
-          ChangeNotifierProvider(create: (context) => StepperProvider()),
-          ChangeNotifierProvider(create: (context) => ContactProvider()),
-          ChangeNotifierProvider(create: (context) => imageProvider()),
-          ChangeNotifierProvider(create: (context) => CallDataProvider()),
-        ],
-        builder: (context, _) {
-          return (Provider.of<PlatformProvider>(context).isIOS)
-              ? CupertinoApp(
-                  debugShowCheckedModeBanner: false,
-                  routes: {
-                    '/': (context) => homepage_IOS(),
-                  },
-                )
-              : MaterialApp(
-                  debugShowCheckedModeBanner: false,
-                  routes: {
-                    '/': (context) => HomePage(),
-                    'detailPage': (context) => const ChatDetailPage(
-                          chatIndex: 1,
-                        ),
-                    'settings': (context) => settings(),
-                  },
-                );
-        });
+      providers: [
+        ChangeNotifierProvider(create: (context) => PlatformProvider()),
+        ChangeNotifierProvider(create: (context) => BottomProvider()),
+        ChangeNotifierProvider(create: (context) => ChatDataProvider()),
+        ChangeNotifierProvider(create: (context) => StepperProvider()),
+        ChangeNotifierProvider(create: (context) => ContactProvider()),
+        ChangeNotifierProvider(create: (context) => imageProvider()),
+        ChangeNotifierProvider(create: (context) => CallDataProvider()),
+      ],
+      builder: (context, _) {
+        return (Provider.of<PlatformProvider>(context).isIOS)
+            ? CupertinoApp(
+                debugShowCheckedModeBanner: false,
+                routes: {
+                  '/': (context) => homepage_IOS(),
+                },
+              )
+            : MaterialApp(
+                debugShowCheckedModeBanner: false,
+                routes: {
+                  '/': (context) => HomePage(),
+                  'detailPage': (context) => const ChatDetailPage(
+                        chatIndex: 1,
+                      ),
+                  'settings': (context) => settings(),
+                },
+              );
+      },
+    );
   }
 }
