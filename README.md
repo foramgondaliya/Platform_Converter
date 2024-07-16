@@ -39,4 +39,6 @@ The app allows users to switch platforms seamlessly, ensuring a consistent user 
 ![Screenshot_20240716_105923](https://github.com/user-attachments/assets/7c0d0d25-e111-42ff-8042-7a02dabf5f65)
 ![Screenshot_20240716_105830](https://github.com/user-attachments/assets/79f8a4b3-ffda-4a00-a07a-2c81cb46bbe9)
 ![Screenshot_20240716_105757](https://github.com/user-attachments/assets/2549316d-e89a-4f9a-90c1-31c7dc00bfda)
+![Screenshot_20240716_110453](https://github.com/user-attachments/assets/97085000-a56a-4a0e-b691-1209113e8292)
+![Screenshot_20240716_110508](https://github.com/user-attachments/assets/37d527b8-e6fe-465c-8cc0-160abd9aacec)
 
