@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 
-class BottomProvider extends ChangeNotifier {
-  int bottomNavIndex = 0;
+class BottomNavigationProvider with ChangeNotifier {
+  int _selectedIndex = 0;
 
-  void bottomNavigation(int index) {
-    bottomNavIndex = index;
+  int get selectedIndex => _selectedIndex;
+
+  void setSelectedIndex(int index) {
+    _selectedIndex = index;
     notifyListeners();
   }
 }

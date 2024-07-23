@@ -34,7 +34,7 @@ class _myAppState extends State<myApp> {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => PlatformProvider()),
-        ChangeNotifierProvider(create: (context) => BottomProvider()),
+        ChangeNotifierProvider(create: (context) => BottomNavigationProvider()),
         ChangeNotifierProvider(create: (context) => ChatDataProvider()),
         ChangeNotifierProvider(create: (context) => StepperProvider()),
         ChangeNotifierProvider(create: (context) => ContactProvider()),
@@ -46,7 +46,7 @@ class _myAppState extends State<myApp> {
             ? CupertinoApp(
                 debugShowCheckedModeBanner: false,
                 routes: {
-                  '/': (context) => homepage_IOS(),
+                  '/': (context) => HomepageIos(),
                 },
               )
             : MaterialApp(

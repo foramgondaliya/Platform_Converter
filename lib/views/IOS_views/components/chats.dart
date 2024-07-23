@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:platform_converter_app/Providers/contactProvider.dart';
 import 'package:platform_converter_app/Providers/imageProvider.dart';
-import 'package:platform_converter_app/Providers/platformProvider.dart';
 import 'package:platform_converter_app/Providers/stepperProvider.dart';
 import 'package:provider/provider.dart';
 
